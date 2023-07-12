@@ -1,5 +1,5 @@
 from django.contrib import admin
-from base import views
+from base import views, views_forFacilites_edit
 from django.urls import path
 from Crescent import settings
 from django.conf.urls.static import static
@@ -252,6 +252,12 @@ urlpatterns = [
     path('delete_CategoryforBlogs',views.delete_CategoryforBlogs),
 
     path('CategoryforStartups_save',views.CategoryforStartups_save),
+#--facility--
+    path("IOT_edit", views_forFacilites_edit.Iot_edit),
+    path("healthcare_edit", views_forFacilites_edit.Healthcare_edit),
+    path("designanddevelopment_edit", views_forFacilites_edit.Design_and_development_edit),
+    path("support_service_edit", views_forFacilites_edit.Support_service_edit),
+    path("center_of_excellance",views_forFacilites_edit.center_of_excellance_edit),
 
 
 ]
