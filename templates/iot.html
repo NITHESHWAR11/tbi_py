@@ -11,7 +11,7 @@
       name="keywords"
     />
     <meta name="author" content="elemis" />
-    <title>Gallery</title>
+    <title>IOT Gallery</title>
     <link rel="shortcut icon" href=" {% static 'icon-dummy.png' %} " />
     <link rel="stylesheet" href=" {% static 'assets/css/plugins.css' %} " />
     <link rel="stylesheet" href=" {% static 'assets/css/style.css' %} " />
@@ -306,39 +306,31 @@
       <div class="container py-14 py-md-16 text-center">
         <div class="row">
           <div class="col-lg-10 col-xl-8 col-xxl-7 mx-auto mb-8">
-            <h1 class="display-5 mb-3">Gallery</h1>
-            <p class="lead fs-lg">
+            <h1 class="display-5 mb-3">IOT Gallery</h1>
+            <!-- <p class="lead fs-lg">
               "Capturing the Moments: A Look into Our Campus Life"
-            </p>
+            </p> -->
           </div>
           <!-- /column -->
         </div>
         <!-- /.row -->
         <div class="grid grid-view projects-masonry">
-          <div class="isotope-filter filter mb-10">
-            <ul>
-              <li><a class="filter-item active" data-filter="*">All</a></li>
-            {% for i in categories %}
-
-              <li><a class="filter-item" data-filter=".{{ i.0.categories }}">{{ i.0.categories }}</a></li>
-
-            {% endfor %}
-  
-            </ul>
-          </div>
           <div class="row gx-md-6 gy-6 isotope">
-            
-            {% for i in images %} 
+            {% for i in Iot_form %} 
             <div class="project item col-md-6 col-xl-4 drinks {{ i.categories }}">
               <figure class="overlay overlay-1 rounded">
                 <a
-                  href="{{ i.image.url }}"
+                  href="{{ i.image_iot.url }}"
                   data-glightbox
                   data-gallery="shots-group"
                 >
-                  <img src=" {{ i.image.url }}" alt=""
-                /></a>
+                  <img src=" {{ i.image_iot.url }}" alt=""/></a>
               </figure>
+              <div class="my-2 space-y-1">
+                <h2 class="text-xl font-semibold sm:text-2xl">TITLE: {{ i.title_iot }}</h2>
+                <h2 class="text-xl font-semibold sm:text-2xl"> CONTANT: {{ i.contant_iot }}</h2>
+                <p class="px-5 text-xs sm:text-base dark:text-gray-400">{{ i.uplode_date }}</p>
+            </div>
             </div>
             {% endfor %}
 

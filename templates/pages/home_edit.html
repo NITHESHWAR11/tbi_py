@@ -637,6 +637,20 @@
                   </div>
                 </div>
               </div>
+              <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <form class="forms-sample" enctype="multipart/form-data" method="post">
+                      {% csrf_token %}
+                      <div class="form-group mt-2">
+                        <label for="exampleInputEmail1">Scrolling text</label>
+                        <input type="text" class="form-control" placeholder="" id="scrolling_text" value="{{ scrolling_text.0.scrolling_text }}" name="Appear-on-to-of-image"><br>
+                        <button id="btn" onclick="send_data('scrolling_text_save',['#scrolling_text'])" class="btn btn-primary mr-2">Submit</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
            
                <!-- <section class="overflow-hidden text-gray-700 ">
                    {% for i in team %}

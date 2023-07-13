@@ -1,5 +1,5 @@
 from django.contrib import admin
-from base import views, views_forFacilites_edit
+from base import views, views_forFacilites_edit, views_for_facilites
 from django.urls import path
 from Crescent import settings
 from django.conf.urls.static import static
@@ -252,6 +252,7 @@ urlpatterns = [
     path('delete_CategoryforBlogs',views.delete_CategoryforBlogs),
 
     path('CategoryforStartups_save',views.CategoryforStartups_save),
+    path('scrolling_text_save', views_forFacilites_edit.scrolling_text_save),
 #--facility--
     path("IOT_edit", views_forFacilites_edit.Iot_edit),
     path("healthcare_edit", views_forFacilites_edit.Healthcare_edit),
@@ -259,6 +260,25 @@ urlpatterns = [
     path("support_service_edit", views_forFacilites_edit.Support_service_edit),
     path("center_of_excellance",views_forFacilites_edit.center_of_excellance_edit),
 
+#--facellity_save------
+    path("Iot_edit_save", views_forFacilites_edit.Iot_edit_save),
+    path("health_care_edit_save", views_forFacilites_edit.helthcare_edit_save),
+    path("design_and_developmeth_save", views_forFacilites_edit.design_and_development_edit_save),
+    path("center_of_eormate_save", views_forFacilites_edit.center_of_excellance_edit_save),
+    path("support_service_edit_save", views_forFacilites_edit.Support_service_edit_save),
+
+#--facellity_save----
+    path("Iot_delete", views_forFacilites_edit.Iot_delete),
+    path("healthcare_delete", views_forFacilites_edit.helthcare_delete),
+    path("support_and_development_delete", views_forFacilites_edit.Support_development_delete),
+    path("support_service_delete", views_forFacilites_edit.Center_of_excellance_delete),
+
+    #-----------------------------------facielty frontend-------------------------------------------------------------------------
+    path("Iot", views_for_facilites.Iot),
+    path("healthcare", views_for_facilites.Healthcare),
+    path("design_development", views_for_facilites.Design_and_Developmentfre),
+    path("support_and_service", views_for_facilites.Support_servisefre),
+    path("center_of_excellancefre", views_for_facilites.Center_of_excellancefre),
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

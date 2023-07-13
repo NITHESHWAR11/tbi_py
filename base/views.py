@@ -9,7 +9,7 @@ from .models import ( Gallery,Team,logo,Carrer,blog,Testimonials,Events,HowWeWor
                     CategoryforQualification,International_Partners,Sisfs,WhoAreWe,Contact_SECTION,HOME_TESTIMONIAL,EventsForm,Facilities_developed,About_SISFS,
                     CategoryforExperience,EDI_InnovationVoucher,EDI_WeAimAtSection,EDI_Eligibility_Section,BundledServices,Start_UpTNimg1,Start_UpTNimg2,
                     CategoryforBlogs,StateGovtFundEligibilitySection,MentorConnectDB,MentorClinicDB, angelInvestorDB, new_venturesDB,TOPSECTION,WhatWeDo,
-                    CategoryforStartups,OurProcess,SpendingSection,JoinOurCommunity,HomePdfLink,Ourstartup_images,mentor_lists )
+                    CategoryforStartups,OurProcess,SpendingSection,JoinOurCommunity,HomePdfLink,Ourstartup_images,mentor_lists, Home_Scrolling_text )
 
 # Custom Tools Functions
 from .Tools import get_images,get_team,reguler_datas,get_blog,get_startup,get_DemoDayPic,freguler_datas
@@ -628,9 +628,10 @@ def home(request):
         govt = Govt_Tie.objects.all()[::-1]
         Uploadimage = UploadImage.objects.all()[::-1]
         link = HomePdfLink.objects.all()[::-1]
+        scrolling_text = Home_Scrolling_text.objects.last()
         
         Internationalpartners = International_Partners.objects.all()[::-1]
-        return render(request,"index.html",reguler_datas({'link':link,'whoweare':whoweare,'ht':home_TESTIMONIAL,'cs':contact_Section,'investors':investors,'ip':Internationalpartners,'govt':govt,'Uploadimage':Uploadimage}))
+        return render(request,"index.html",reguler_datas({"scrolling_text":scrolling_text,'link':link,'whoweare':whoweare,'ht':home_TESTIMONIAL,'cs':contact_Section,'investors':investors,'ip':Internationalpartners,'govt':govt,'Uploadimage':Uploadimage}))
     except:
         print("maybe database are empty")
     return render(request,"pages/home_edit.html",reguler_datas())
@@ -646,8 +647,9 @@ def home_edit(request):
         govt = Govt_Tie.objects.all()[::-1]
         link = HomePdfLink.objects.all()[::-1]
         Uploadimage = UploadImage.objects.all()[::-1]
+        scrolling_text = Home_Scrolling_text.objects.last()
 
-        return render(request,"pages/home_edit.html",reguler_datas({'link':link,'whoweare':whoweare,'ht':home_TESTIMONIAL,'cs':contact_Section,'investors':investors,'ip':Internationalpartners,'govt':govt,'Uploadimage':Uploadimage}))
+        return render(request,"pages/home_edit.html",reguler_datas({'scrolling_text':scrolling_text, 'link':link,'whoweare':whoweare,'ht':home_TESTIMONIAL,'cs':contact_Section,'investors':investors,'ip':Internationalpartners,'govt':govt,'Uploadimage':Uploadimage}))
     except:
         print("maybe database are empty")
     return render(request,"pages/home_edit.html",reguler_datas())
