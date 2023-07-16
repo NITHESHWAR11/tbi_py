@@ -1,5 +1,5 @@
 from django.contrib import admin
-from base import views, views_forFacilites_edit, views_for_facilites
+from base import views, views_forFacilites_edit, views_for_facilites, views_for_newsandevents
 from django.urls import path
 from Crescent import settings
 from django.conf.urls.static import static
@@ -279,6 +279,23 @@ urlpatterns = [
     path("design_development", views_for_facilites.Design_and_Developmentfre),
     path("support_and_service", views_for_facilites.Support_servisefre),
     path("center_of_excellancefre", views_for_facilites.Center_of_excellancefre),
+
+    #----------------------------------News and Events edit ----------------------------------------------------------------------
+    path("latest_news_edit", views_for_newsandevents.Latest_news_edit),
+    path("new_events_edit", views_for_newsandevents.New_events_edit),
+    path("past_events_edit", views_for_newsandevents.Past_events_edit),
+    #---------------------------------News and Events save------------------------------------------------------------------------
+    path("latest_news_save", views_for_newsandevents.Latest_news_save),
+    path("New_event_save", views_for_newsandevents.New_event_save),
+    path("Past_event_save", views_for_newsandevents.Past_event_save),
+    #--------------------------------News and Evemts delete------------------------------------------------------------------------
+    path("Latest_news_delete", views_for_newsandevents.Latest_news_delete),
+    path("New_event_delete", views_for_newsandevents.New_event_delete),
+    path("Past_event_delete", views_for_newsandevents.Past_event_delete),
+    #-------------------------------->news and events frentand---------------------------------------------------------------------
+    path("Latest_events",views_for_newsandevents.Latest_events),
+    path("New_events", views_for_newsandevents.New_events),
+    path("past_events", views_for_newsandevents.past_events)
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

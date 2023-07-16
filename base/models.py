@@ -642,4 +642,26 @@ class Home_Scrolling_text(models.Model):
     id = models.IntegerField(primary_key=True)
     scrolling_text = models.CharField(max_length=300)
     last_updated_date = models.DateField(default=timezone.now)
-#----------------------------------------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------News And Evense------------------------------------------------------------
+class Latest_News_db(models.Model):
+    id = models.IntegerField(primary_key=True)
+    Title = models.CharField(max_length=200)
+    image_banner = models.ImageField(upload_to='Latest_news_bann/')
+    description = models.CharField(max_length=500)
+    uplode_date = models.DateField(default=timezone.now)
+
+class New_Events_db(models.Model):
+    id = models.IntegerField(primary_key=True)
+    Title = models.CharField(max_length=200)
+    image_banner = models.ImageField(upload_to='New_Events/')
+    description = models.CharField(max_length=500)
+    uplode_date = models.DateField(default=timezone.now)
+
+class Past_Events_db(models.Model):
+    id = models.IntegerField(primary_key=True)
+    Title = models.CharField(max_length=200)
+    image_banner = models.ImageField(upload_to='Past_Events/')
+    description = models.CharField(max_length=500)
+    uplode_date = models.DateField(default=timezone.now)
+
+
