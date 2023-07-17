@@ -1,11 +1,19 @@
 TO RUN THE APPLICATION:
+pip install -r requirements.txt
+
+python manage.py collectstatic
+
+python manage.py makemigrations
+
+python manage.py migrate
+
 python manage.py runserver
 
 To access django admin panel,
-url/admin/
+admin_home/
 
 To access the customized admin panel,
-url/admin/home
+admin/
 
 crendentials for both panels,
 email:admin
@@ -17,7 +25,3 @@ python manage.py createsuperuser --username=joe --email=joe@example.com
 Example :
 python manage.py createsuperuser --username=admin --email=admin@example.com
 password : admin@123
-
-sample link for download startup section
-
-https://www.ciic.ventures/wp-content/uploads/2022/02/113-CIIC-Startups-Compendium-compressed.pdf
