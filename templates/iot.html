@@ -314,30 +314,19 @@
           <!-- /column -->
         </div>
         <!-- /.row -->
-        <div class="grid grid-view projects-masonry">
-          <div class="row gx-md-6 gy-6 isotope">
-            {% for i in Iot_form %} 
-            <div class="project item col-md-6 col-xl-4 drinks {{ i.categories }}">
-              <figure class="overlay overlay-1 rounded">
-                <a
-                  href="{{ i.image_iot.url }}"
-                  data-glightbox
-                  data-gallery="shots-group"
-                >
-                  <img src=" {{ i.image_iot.url }}" alt=""/></a>
-              </figure>
-              <div class="my-2 space-y-1">
-                <h2 class="text-xl font-semibold sm:text-2xl">TITLE: {{ i.title_iot }}</h2>
-                <h2 class="text-xl font-semibold sm:text-2xl"> CONTANT: {{ i.contant_iot }}</h2>
-                <p class="px-5 text-xs sm:text-base dark:text-gray-400">{{ i.uplode_date }}</p>
+        <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+          <!--Card 1-->
+          {% for i in Iot_form %}
+          <div class="rounded overflow-hidden shadow-lg w-auto">
+            <img class="w-full h-24" src="{{ i.image_iot.url }}" alt="Mountain">
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">{{ i.title_iot }}</div>
+              <p class="text-gray-700 text-base">
+                {{ i.contant_iot }}
+              </p>
             </div>
-            </div>
-            {% endfor %}
-
-
-            <!-- /.project -->
           </div>
-          <!-- /.row -->
+          {% endfor %}
         </div>
         <!-- /.grid -->
       </div>
