@@ -327,7 +327,22 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Content</label>
-                                            <input type="text" class="form-control" placeholder="content" id="content"
+                                            <input type="text" class="form-control" required autocomplete="off" placeholder="content" id="content"
+                                                name="program">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Key Points 1</label>
+                                            <input type="text" required autocomplete="off" class="form-control" placeholder="Key Points 1" id="Key_Points_1"
+                                                name="program">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Key Points 2</label>
+                                            <input type="text" required autocomplete="off" class="form-control" placeholder="Key Points 2" id="Key_Points_2"
+                                                name="program">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Key Points 3</label>
+                                            <input type="text" required autocomplete="off" class="form-control" placeholder="Key Points 3" id="Key_Points_3"
                                                 name="program">
                                         </div>
                                         <div class="form-group">
@@ -337,7 +352,7 @@
                                                 name="image_file">
                                         </div>
                                         <button id="btn"
-                                            onclick="img_upload('Iot_edit_save','#fileInput-single_image',['#title','#content'])"
+                                            onclick="img_upload('Iot_edit_save','#fileInput-single_image',['#title','#content', '#Key_Points_1', '#Key_Points_2', '#Key_Points_3'])"
                                             class="btn btn-primary mr-2">Submit</button>
                                         <button class="btn btn-light">Cancel</button>
                                     </form>

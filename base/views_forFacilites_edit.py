@@ -12,8 +12,11 @@ from .Tools import reguler_datas
 def Iot_edit_save(request):
      Title = request.POST.get("#title")
      contant = request.POST.get("#content")
+     Key_Points_1 = request.POST.get("#Key_Points_1")
+     Key_Points_2 = request.POST.get("#Key_Points_2")
+     Key_Points_3 = request.POST.get("#Key_Points_3")
      images = request.FILES["#fileInput-single_image"]
-     obj = Iot_form(title_iot=Title, contant_iot=contant, image_iot=images)
+     obj = Iot_form(title_iot=Title, contant_iot=contant, image_iot=images, key_point1=Key_Points_1, key_point2=Key_Points_2, key_point3=Key_Points_3)
      obj.save()
      return render(request, "pages/IOT_edit.html", reguler_datas())
 
@@ -35,8 +38,11 @@ def Iot_edit(request):
 def helthcare_edit_save(request):
      Title = request.POST.get("#title")
      contant = request.POST.get("#content")
+     Key_Points_1 = request.POST.get("#Key_Points_1")
+     Key_Points_2 = request.POST.get("#Key_Points_2")
+     Key_Points_3 = request.POST.get("#Key_Points_3")
      images = request.FILES["#fileInput-single_image"]
-     obj = HealthCare_form(title_iot=Title, contant_iot=contant, image_iot=images)
+     obj = HealthCare_form(title_iot=Title, contant_iot=contant, image_iot=images, key_point1=Key_Points_1, key_point2=Key_Points_2, key_point3=Key_Points_3)
      obj.save()
      return render(request,"pages/Healthcare_edit.html",reguler_datas())
 
@@ -58,8 +64,11 @@ def Healthcare_edit(request):
 def design_and_development_edit_save(request):
      Title = request.POST.get("#title")
      contant = request.POST.get("#content")
+     Key_Points_1 = request.POST.get("#Key_Points_1")
+     Key_Points_2 = request.POST.get("#Key_Points_2")
+     Key_Points_3 = request.POST.get("#Key_Points_3")
      images = request.FILES["#fileInput-single_image"]
-     obj = Design_And_Development(title_iot=Title, contant_iot=contant, image_iot=images)
+     obj = Design_And_Development(title_iot=Title, contant_iot=contant, image_iot=images, key_point1=Key_Points_1, key_point2=Key_Points_2, key_point3=Key_Points_3)
      obj.save()
      return render(request,"pages/Design_&_development_edit.html",reguler_datas())
 
@@ -82,8 +91,11 @@ def Design_and_development_edit(request):
 def Support_service_edit_save(request):
      Title = request.POST.get("#title")
      contant = request.POST.get("#content")
+     Key_Points_1 = request.POST.get("#Key_Points_1")
+     Key_Points_2 = request.POST.get("#Key_Points_2")
+     Key_Points_3 = request.POST.get("#Key_Points_3")
      images = request.FILES["#fileInput-single_image"]
-     obj = Support_servise(title_iot=Title, contant_iot=contant, image_iot=images)
+     obj = Support_servise(title_iot=Title, contant_iot=contant, image_iot=images, key_point1=Key_Points_1, key_point2=Key_Points_2, key_point3=Key_Points_3)
      obj.save()
      return render(request, "pages/Support_service_edit.html", reguler_datas())
 
@@ -105,8 +117,11 @@ def Support_service_edit(request):
 def center_of_excellance_edit_save(request):
      Title = request.POST.get("#title")
      contant = request.POST.get("#content")
+     Key_Points_1 = request.POST.get("#Key_Points_1")
+     Key_Points_2 = request.POST.get("#Key_Points_2")
+     Key_Points_3 = request.POST.get("#Key_Points_3")
      images = request.FILES["#fileInput-single_image"]
-     obj = Center_of_excellance(title_iot=Title, contant_iot=contant, image_iot=images)
+     obj = Center_of_excellance(title_iot=Title, contant_iot=contant, image_iot=images, key_point1=Key_Points_1, key_point2=Key_Points_2, key_point3=Key_Points_3)
      obj.save()
      return render(request, "pages/center_of_excellance_edit.html", reguler_datas())
 

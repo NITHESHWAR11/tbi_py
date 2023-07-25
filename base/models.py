@@ -607,6 +607,9 @@ class Iot_form(models.Model):
     id = models.IntegerField(primary_key=True)
     title_iot = models.CharField(max_length=200)
     contant_iot = models.CharField(max_length=200)
+    key_point1 = models.CharField(max_length=200, default='SOME STRING')
+    key_point2 = models.CharField(max_length=200, default='SOME STRING')
+    key_point3 = models.CharField(max_length=200, default='SOME STRING')
     image_iot = models.ImageField(upload_to="Iot_images/")
     uplode_date = models.DateField(default=timezone.now)
 
@@ -614,6 +617,9 @@ class HealthCare_form(models.Model):
     id = models.IntegerField(primary_key=True)
     title_iot = models.CharField(max_length=200)
     contant_iot = models.CharField(max_length=200)
+    key_point1 = models.CharField(max_length=200, default='SOME STRING')
+    key_point2 = models.CharField(max_length=200, default='SOME STRING')
+    key_point3 = models.CharField(max_length=200, default='SOME STRING')
     image_iot = models.ImageField(upload_to="HealthCare_images/")
     uplode_date = models.DateField(default=timezone.now)
 
@@ -621,6 +627,9 @@ class Design_And_Development(models.Model):
     id = models.IntegerField(primary_key=True)
     title_iot = models.CharField(max_length=200)
     contant_iot = models.CharField(max_length=200)
+    key_point1 = models.CharField(max_length=200, default='SOME STRING')
+    key_point2 = models.CharField(max_length=200, default='SOME STRING')
+    key_point3 = models.CharField(max_length=200, default='SOME STRING')
     image_iot = models.ImageField(upload_to="design_and_development_images/")
     uplode_date = models.DateField(default=timezone.now)
 
@@ -628,13 +637,19 @@ class Support_servise(models.Model):
     id = models.IntegerField(primary_key=True)
     title_iot = models.CharField(max_length=200)
     contant_iot = models.CharField(max_length=200)
+    key_point1 = models.CharField(max_length=200, default='SOME STRING')
+    key_point2 = models.CharField(max_length=200, default='SOME STRING')
+    key_point3 = models.CharField(max_length=200, default='SOME STRING')
     image_iot = models.ImageField(upload_to="support_servise_images/")
     uplode_date = models.DateField(default=timezone.now)
 
 class Center_of_excellance(models.Model):
     id = models.IntegerField(primary_key=True)
     title_iot = models.CharField(max_length=200)
-    contant_iot = models.CharField(max_length=200)
+    contant_iot = models.CharField(max_length=200, default='SOME STRING')
+    key_point1 = models.CharField(max_length=200, default='SOME STRING')
+    key_point2 = models.CharField(max_length=200, default='SOME STRING')
+    key_point3 = models.CharField(max_length=200, default='SOME STRING')
     image_iot = models.ImageField(upload_to="center_of_excellance_images/")
     uplode_date = models.DateField(default=timezone.now)
 #----------------------------------------------------------------------------------------------------------------------------------
