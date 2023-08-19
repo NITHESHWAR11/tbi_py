@@ -5,13 +5,9 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONFAULTHANDLER 1
 ENV PYTHONUNBUFFERED 1
 
-RUN apk update && apk add --no-cache \
-    # Required for installing/upgrading postgres, Pillow, etc:
-    gcc python3-dev \
-
 # Set work directory
-RUN mkdir /code
-WORKDIR /code
+RUN mkdir /
+WORKDIR /
 
 # Install dependencies into a virtualenv
 RUN pip install --upgrade pipenv
