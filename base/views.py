@@ -881,13 +881,9 @@ def Teams_page_edit(request):
     return render(request, "pages/teams_edit.html", reguler_datas())
 
 def Teams_page_delete(request):
-    print(1)
     bl_id = request.POST.get("id")
-    print(2)
     logo = team_lists.objects.get(id=bl_id)
-    print(3)
     logo.delete()
-    print(4)
     return render(request, "pages/teams_edit.html", reguler_datas())
 
 def ourStartups (request):
