@@ -288,6 +288,14 @@ class mentor_lists(models.Model):
     TECK_OR_NONTECK = models.CharField(max_length=200)
     last_updated_date  = models.DateField(default=timezone.now)
 
+class team_lists(models.Model):
+    id = models.IntegerField(primary_key=True)
+    team_name = models.CharField(max_length=200)
+    special_at         = models.CharField(max_length=200)
+    team_img = models.ImageField(upload_to='teams_profile/%Y/%m/%d', default='images/user_image.png')
+    TECK_OR_NONTECK = models.CharField(max_length=200)
+    last_updated_date  = models.DateField(default=timezone.now)
+
 
 class HowWeWork(models.Model):
     id = models.IntegerField(primary_key=True)

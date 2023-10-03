@@ -159,6 +159,11 @@ urlpatterns = [
     path('nonTechinal_mentor', views.nontechnical_page),
     path('technical', views.technical_page),
     
+    path("teams", views.Teams_page),
+    path("Teams_page_edit", views.Teams_page_edit),
+    path('Teams_page_save', views.Teams_page_save),
+    path('Team_page_delete', views.Teams_page_delete),
+
     path("service",views.service),
     path("service_edit",views.service_edit),
     path("TopSection_save",views.TopSection_save),

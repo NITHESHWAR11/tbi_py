@@ -9,7 +9,7 @@ from .models import ( Gallery,Team,logo,Carrer,blog,Testimonials,Events,HowWeWor
                     CategoryforQualification,International_Partners,Sisfs,WhoAreWe,Contact_SECTION,HOME_TESTIMONIAL,EventsForm,Facilities_developed,About_SISFS,
                     CategoryforExperience,EDI_InnovationVoucher,EDI_WeAimAtSection,EDI_Eligibility_Section,BundledServices,Start_UpTNimg1,Start_UpTNimg2,
                     CategoryforBlogs,StateGovtFundEligibilitySection,MentorConnectDB,MentorClinicDB, angelInvestorDB, new_venturesDB,TOPSECTION,WhatWeDo,
-                    CategoryforStartups,OurProcess,SpendingSection,JoinOurCommunity,HomePdfLink,Ourstartup_images,mentor_lists, Home_Scrolling_text )
+                    CategoryforStartups,OurProcess,SpendingSection,JoinOurCommunity,HomePdfLink,Ourstartup_images,mentor_lists,team_lists, Home_Scrolling_text )
 
 # Custom Tools Functions
 from .Tools import get_images,get_team,reguler_datas,get_blog,get_startup,get_DemoDayPic,freguler_datas
@@ -854,6 +854,41 @@ def Mentor_page_delete(request):
     logo = mentor_lists.objects.get(id=bl_id)
     logo.delete()
     return render(request, "pages/mentors_edit.html", reguler_datas())
+
+def Teams_page(request):
+    try:
+        team_list = team_lists.objects.all()[::-1]
+        return render(request,"team_page.html", reguler_datas({"team_lists":team_list}))
+    except:
+        print("maybe database are empty")
+    return render(request, "team_page.html", reguler_datas())
+
+def Teams_page_save(request): 
+    teams_name = request.POST.get("#Team_Name")
+    teams_special_at = request.POST.get("#Team_special_At")
+    teams_type = request.POST.get("#sub-heading3")
+    teams_image = request.FILES['#Team_image']
+    obj = team_lists(team_name=teams_name, special_at=teams_special_at, team_img=teams_image, TECK_OR_NONTECK=teams_type)
+    obj.save()
+    return render(request, "pages/teams_edit.html", reguler_datas())
+
+def Teams_page_edit(request):
+    try:
+        team_list = team_lists.objects.all()[::-1]
+        return render(request,"pages/teams_edit.html", reguler_datas({"team_lists":team_list}))
+    except:
+        print("maybe database are empty")
+    return render(request, "pages/teams_edit.html", reguler_datas())
+
+def Teams_page_delete(request):
+    print(1)
+    bl_id = request.POST.get("id")
+    print(2)
+    logo = team_lists.objects.get(id=bl_id)
+    print(3)
+    logo.delete()
+    print(4)
+    return render(request, "pages/teams_edit.html", reguler_datas())
 
 def ourStartups (request):
     try:
