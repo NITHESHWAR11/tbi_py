@@ -130,7 +130,7 @@
                       <a class="dropdown-item  " href="">TBI PRESIDENT MESSAGE</a>
                     </li>
                     <li class="dropdown dropdown-submenu dropend">
-                      <a class="dropdown-item  " href="/team">TEAM</a>
+                      <a class="dropdown-item  " href="/teams">TEAM</a>
                     </li>
                     <li class="dropdown dropdown-submenu dropend">
                       <a class="dropdown-item  " href="/testimonicals">Testimonials</a>
@@ -154,16 +154,16 @@
                   <a class="nav-link  " href="/ourstartups">Mentors</a>
                   <ul class="dropdown-menu">
                     <li class="dropdown dropdown-submenu dropend">
-                      <a class="dropdown-item  " href="/">Technical</a>
+                      <a class="dropdown-item  " href="/technical">Technical</a>
                     </li>
                     <li class="dropdown dropdown-submenu dropend">
-                      <a class="dropdown-item  " href="/">Non-Technical</a>
+                      <a class="dropdown-item  " href="/nonTechinal_mentor">Non-Technical</a>
                     </li>
                   </ul>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a class="nav-link" href="/teams">Teams</a>
-                </li>
+                </li> -->
                 <!--our startups end-->
 
                 <li class="nav-item dropdown">
@@ -552,7 +552,26 @@
                 <div class="widget">
                   <h3 class="h2 mb-1 text-white">{{ FooterEditPage.0.InstituteName }}</h3>
                   <p class="lead mb-5">
-                    {{ FooterEditPage.0.Address }}
+                    <div class="d-flex flex-row">
+                      <div>
+                        <div class="icon text-primary fs-28 me-6 mt-n1"> <iconify-icon
+                            icon="uil:location-pin-alt"></iconify-icon> </div>
+                      </div>
+                      <div>
+                        <h5 class="mb-1 text-white">Campus 1</h5>
+                        <address>{{ cs.0.Address1 }}</address>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                      <div>
+                        <div class="icon text-primary fs-28 me-6 mt-n1"> <iconify-icon
+                            icon="uil:location-pin-alt"></iconify-icon> </div>
+                      </div>
+                      <div>
+                        <h5 class="mb-1 text-white">Campus 2</h5>
+                        <address>{{ cs.0.Address2 }}</address>
+                      </div>
+                    </div>
 
                     <span style="display: block; margin-top: 10px;"> Ph.No : {{ FooterEditPage.0.PhoneNumber }},</span>
                     {% comment %} <span style="display: block; margin-top: 10px;"> EXN : {{ FooterEditPage.0.EXN }}

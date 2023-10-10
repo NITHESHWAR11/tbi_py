@@ -217,7 +217,7 @@
                       <a class="dropdown-item  " href="">TBI PRESIDENT MESSAGE</a>
                     </li>
                     <li class="dropdown dropdown-submenu dropend">
-                      <a class="dropdown-item  " href="/team">TEAM</a>
+                      <a class="dropdown-item  " href="/teams">TEAM</a>
                     </li>
                     <li class="dropdown dropdown-submenu dropend">
                       <a class="dropdown-item  " href="/testimonicals">Testimonials</a>
@@ -249,9 +249,9 @@
                   </ul>
                 </li>
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a href="/teams" class="nav-link">Teams</a>
-                </li>
+                </li> -->
                 <!--our startups end-->
 
                 <li class="nav-item dropdown">
@@ -780,7 +780,7 @@
       </div>
     </section>
 
-    <section class=" bg-soft-primary" data-aos="zoom-in-up">
+    <!-- <section class=" bg-soft-primary" data-aos="zoom-in-up">
       <div class="container py-14 py-md-16 text-center">
         <div class="row">
           <div class="col-md-9 col-lg-7 col-xl-7 mx-auto text-center">
@@ -792,9 +792,7 @@
               services and grow your business.
             </p>
           </div>
-          <!-- /column -->
         </div>
-        <!-- /.row -->
         <div class="row">
           <div class="flex">
 
@@ -803,15 +801,7 @@
               <input type="submit" value="Join Now" name="subscribe" id="mc-embedded-subscribe2"
                 class="btn btn-primary" />
             </a>
-          </div>
-
-          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-
-
-
-          <!-- /.row -->
-        </div>
-    </section>
+    </section> -->
     <nav class="navbar navbar-expand-lg extended navbar-light navbar-bg-light">
       <!-- /.d-flex -->
       <div class="navbar-collapse-wrapper bg-white d-flex flex-row align-items-center">
@@ -893,7 +883,26 @@
               <div class="widget">
                 <h3 class="h2 mb-1 text-white">{{ FooterEditPage.0.InstituteName }}</h3>
                 <p class="lead mb-5">
-                  {{ FooterEditPage.0.Address }}
+                  <div class="d-flex flex-row">
+                    <div>
+                      <div class="icon text-primary fs-28 me-6 mt-n1"> <iconify-icon
+                          icon="uil:location-pin-alt"></iconify-icon> </div>
+                    </div>
+                    <div>
+                      <h5 class="mb-1 text-white">Campus 1</h5>
+                      <address>{{ cs.0.Address1 }}</address>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row">
+                    <div>
+                      <div class="icon text-primary fs-28 me-6 mt-n1"> <iconify-icon
+                          icon="uil:location-pin-alt"></iconify-icon> </div>
+                    </div>
+                    <div>
+                      <h5 class="mb-1 text-white">Campus 2</h5>
+                      <address>{{ cs.0.Address2 }}</address>
+                    </div>
+                  </div>
 
                   <span style="display: block; margin-top: 10px;"> Ph.No : {{ FooterEditPage.0.PhoneNumber }},</span>
 

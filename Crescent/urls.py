@@ -88,7 +88,7 @@ urlpatterns = [
     path('delete_SISFS_scheme',views.delete_SISFS_scheme),
 
 
-    path("about",views.about),
+    # path("about",views.about),
     path("about_edit",views.about_edit),
     
    
@@ -300,7 +300,8 @@ urlpatterns = [
     #-------------------------------->news and events frentand---------------------------------------------------------------------
     path("Latest_events",views_for_newsandevents.Latest_events),
     path("New_events", views_for_newsandevents.New_events),
-    path("past_events", views_for_newsandevents.past_events)
+    path("past_events", views_for_newsandevents.past_events),
+    # path("about", views.about_us)
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

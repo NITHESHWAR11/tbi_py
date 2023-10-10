@@ -52,7 +52,8 @@ def image_upload_page_gallery(request):
 #...............gallery.......................................
 def gallery(request):
     item = get_images()
-    return render(request,"gallery.html",reguler_datas({"categories":item[0],"images":item[1]}))
+    contact_Section =  Contact_SECTION.objects.all()[::-1]
+    return render(request,"gallery.html",reguler_datas({"categories":item[0],"images":item[1], 'cs':contact_Section}))
 #............................................................
 # upload image...............................................
 def upload_image(request):
@@ -186,7 +187,8 @@ def save_edit_blog(request,pk):
 
 def list_blog(request):
     items = get_blog()
-    return render(request,"home/blog.html",reguler_datas({'blogs':items}))
+    contact_Section =  Contact_SECTION.objects.all()[::-1]
+    return render(request,"home/blog.html",reguler_datas({'blogs':items, 'cs':contact_Section}))
 
 def view_blog(request,pk):
     page = blog.objects.get(id=pk)
@@ -245,7 +247,8 @@ def events_save(request):
 
 def Testimonicals(request):
     obj = Testimonials.objects.all()
-    return render(request,"about_us/Testimonicals.html",reguler_datas({"card":obj}))
+    contact_Section =  Contact_SECTION.objects.all()[::-1]
+    return render(request,"about_us/Testimonicals.html",reguler_datas({"card":obj, 'cs':contact_Section}))
 
 @login_required(login_url='/FourNotFout')
 def Testimonicals_edit(request):
@@ -446,15 +449,17 @@ def sisfs(request):
     try:
         obj = Sisfs.objects.latest('id')
         re_view = obj.overview.split(',')[0:-1]
+        contact_Section =  Contact_SECTION.objects.all()[::-1]
     except:
         obj = ""
         re_view = ""
         print("maybe the database are empty.....")
+        contact_Section =  Contact_SECTION.objects.all()[::-1]
     try :
-        return render(request,"sisfs.html",reguler_datas({'birac':obj,"topic":re_view,'data':Sisfs.objects.latest('id'),'abt':About_SISFS.objects.all()}))
+        return render(request,"sisfs.html",reguler_datas({'birac':obj,"topic":re_view,'data':Sisfs.objects.latest('id'),'abt':About_SISFS.objects.all(), 'cs':contact_Section}))
     except:
         print("error on sisfs's return statement line...")
-        return render(request,"sisfs.html",reguler_datas())
+        return render(request,"sisfs.html",reguler_datas({'cs':contact_Section}))
 
 
 @login_required(login_url='/FourNotFout')
@@ -810,7 +815,8 @@ def MBA_save(request):
 def Mentor_page(request):
     try:
         mentor_list = mentor_lists.objects.all()[::-1]
-        return render(request,"mentor_page.html", reguler_datas({"mentor_lists":mentor_list}))
+        contact_Section =  Contact_SECTION.objects.all()[::-1]
+        return render(request,"mentor_page.html", reguler_datas({"mentor_lists":mentor_list, 'cs':contact_Section}))
     except:
         print("maybe database are empty")
     return render(request, "mentor_page.html", reguler_datas())
@@ -818,7 +824,8 @@ def Mentor_page(request):
 def nontechnical_page(request):
     try:
         mentor_list = mentor_lists.objects.all()[::-1]
-        return render(request,"non_techncal.html", reguler_datas({"mentor_lists":mentor_list}))
+        contact_Section =  Contact_SECTION.objects.all()[::-1]
+        return render(request,"non_techncal.html", reguler_datas({"mentor_lists":mentor_list, }))
     except:
         print("maybe database are empty")
     return render(request, "non_techncal.html", reguler_datas())
@@ -826,7 +833,8 @@ def nontechnical_page(request):
 def technical_page(request):
     try:
         mentor_list = mentor_lists.objects.all()[::-1]
-        return render(request,"techncal.html", reguler_datas({"mentor_lists":mentor_list}))
+        contact_Section =  Contact_SECTION.objects.all()[::-1]
+        return render(request,"techncal.html", reguler_datas({"mentor_lists":mentor_list, 'cs':contact_Section}))
     except:
         print("maybe database are empty")
     return render(request, "techncal.html", reguler_datas())
@@ -858,7 +866,8 @@ def Mentor_page_delete(request):
 def Teams_page(request):
     try:
         team_list = team_lists.objects.all()[::-1]
-        return render(request,"team_page.html", reguler_datas({"team_lists":team_list}))
+        contact_Section =  Contact_SECTION.objects.all()[::-1]
+        return render(request,"team_page.html", reguler_datas({"team_lists":team_list, 'cs':contact_Section}))
     except:
         print("maybe database are empty")
     return render(request, "team_page.html", reguler_datas())
@@ -889,7 +898,8 @@ def Teams_page_delete(request):
 def ourStartups (request):
     try:
         ourStartups_logo = Ourstartup_images.objects.all()[::-1]
-        return render(request,"ourstartup.html", reguler_datas({'startup':get_startup(), "ourStartups_logo":ourStartups_logo}))
+        contact_Section =  Contact_SECTION.objects.all()[::-1]
+        return render(request,"ourstartup.html", reguler_datas({'startup':get_startup(), "ourStartups_logo":ourStartups_logo, 'cs':contact_Section}))
     except:
         print("maybe database are empty")
     return render(request,"ourstartup.html",reguler_datas({'startup':get_startup()}))
@@ -932,14 +942,16 @@ def delete_ourStartups_logo_save(request):
 def ourstartup_pre_Incubation(request):
     try:
         Ourstartup_image = Ourstartup_images.objects.all()[::-1]
-        return render(request,"pre_incubation.html", reguler_datas({"Ourstartup_image": Ourstartup_image}))
+        contact_Section =  Contact_SECTION.objects.all()[::-1]
+        return render(request,"pre_incubation.html", reguler_datas({"Ourstartup_image": Ourstartup_image, 'cs':contact_Section}))
     except:
         print("maybe database are empty")
     return render(request, "pre_incubation.html", reguler_datas())
 
 def ourstartup_Incubation(request):
     Ourstartup_image = Ourstartup_images.objects.all()[::-1]
-    return render(request,"incubation.html", reguler_datas({"Ourstartup_image": Ourstartup_image}))
+    contact_Section =  Contact_SECTION.objects.all()[::-1]
+    return render(request,"incubation.html", reguler_datas({"Ourstartup_image": Ourstartup_image, 'cs':contact_Section}))
 
 
 def delete_startup(request):
@@ -1477,7 +1489,8 @@ def carrer_convert_excel(request):
 
     
 def contact(request):
-    return render(request,"contact.html",reguler_datas({'ContactEditPage':ContactEditPage.objects.all()[::-1]}))
+    contact_Section =  Contact_SECTION.objects.all()[::-1]
+    return render(request,"contact.html",reguler_datas({'ContactEditPage':ContactEditPage.objects.all()[::-1], 'cs':contact_Section}))
 
 @login_required(login_url='/FourNotFout')
 def contact_edit(request):
@@ -1627,3 +1640,7 @@ def delete_CategoryforStartups(request):
     image = CategoryforStartups.objects.get(id=id)
     image.delete()
     return render(request,"about_us/team.html")
+
+
+def about_us(request):
+    return render(request,"about.html",reguler_datas())

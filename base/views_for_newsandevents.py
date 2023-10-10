@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
 #models
-from .models import Latest_News_db, New_Events_db, Past_Events_db
+from .models import Latest_News_db, New_Events_db, Past_Events_db, Contact_SECTION
 
 #utls import
 from .Tools import reguler_datas
@@ -88,7 +88,8 @@ def Past_events_edit(request):
 def New_events(request):
     try:
         New_Events_formdata_db = New_Events_db.objects.all()[::-1]
-        return render(request, "new_events.html", reguler_datas({'New_Events_formdata_db':New_Events_formdata_db}))
+        contact_Section =  Contact_SECTION.objects.all()[::-1]
+        return render(request, "new_events.html", reguler_datas({'New_Events_formdata_db':New_Events_formdata_db, 'cs':contact_Section}))
     except:
         print("Maybe No data in database")
     return render(request, "new_events.html", reguler_datas())
@@ -96,7 +97,8 @@ def New_events(request):
 def Latest_events(request):
     try:
         Latest_News_formdata_db = Latest_News_db.objects.all()[::-1]
-        return render(request, "latest_events.html", reguler_datas({'Latest_News_formdata_db':Latest_News_formdata_db}))
+        contact_Section =  Contact_SECTION.objects.all()[::-1]
+        return render(request, "latest_events.html", reguler_datas({'Latest_News_formdata_db':Latest_News_formdata_db, 'cs':contact_Section}))
     except:
         print("Maybe No data in database")
     return render(request, "latest_events.html", reguler_datas())
@@ -104,7 +106,8 @@ def Latest_events(request):
 def past_events(request):
     try:
         Past_Events_formdata_db = Past_Events_db.objects.all()[::-1]
-        return render(request, "past_events.html", reguler_datas({'Past_Events_formdata_db':Past_Events_formdata_db}))
+        contact_Section =  Contact_SECTION.objects.all()[::-1]
+        return render(request, "past_events.html", reguler_datas({'Past_Events_formdata_db':Past_Events_formdata_db, 'cs':contact_Section}))
     except:
         print("Maybe No data in database")
     return render(request, "past_events.html", reguler_datas())
