@@ -1643,4 +1643,5 @@ def delete_CategoryforStartups(request):
 
 
 def about_us(request):
-    return render(request,"about.html",reguler_datas())
+    contact_Section =  Contact_SECTION.objects.all()[::-1]
+    return render(request,"about.html",reguler_datas({'cs':contact_Section}))
