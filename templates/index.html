@@ -626,8 +626,8 @@
           {% for i in govt %}
           <div class="col hover">
             <div class="card shadow-lg h-100 align-items-center">
-              <div class="card-body align-items-center d-flex px-3 py-6 p-md-8">
-                <figure class="px-md-3 px-xl-0 px-xxl-3 mb-0">
+              <div class="card-body align-items-center d-flex px-3 py-6 p-md-4">
+                <figure class="px-md-3 px-xl-0 px-xxl-100 mb-0">
                   <img src="{{ i.image.url }}" alt="" />
                 </figure>
               </div>
@@ -668,11 +668,14 @@
           <div class="col-md-8 col-lg-6 offset-lg-0 col-xl-5 offset-xl-1 position-relative">
             <div class="shape bg-dot primary rellax w-17 h-21" data-rellax-speed="1" style="top: -2rem; left: -1.4rem;">
             </div>
-            <figure class="rounded"><img src="{% static 'assets/img/photos/about4.jpg' %}"
-                srcset="./{% static 'assets/img/photos/about4@2x.jpg' %} 2x" alt=""></figure>
           </div>
+          <figure>
+            <img src="{% static 'assets/img/brands/Our_services.svg' %}" 
+            srcset="{% static 'assets/img/brands/Our_services.svg' %}" 
+            alt="">
+          </figure>
           <!--/column -->
-          <div class="col-lg-6">
+          <!-- <div class="col-lg-6">
             <img src="{% static 'assets/img/icons/lineal/telemarketer.svg'  %}"
               class="svg-inject icon-svg icon-svg-md mb-4" alt="" />
             <h2 class="display-4 mb-8">{{ cs.0.Title }}</h2>
@@ -718,7 +721,7 @@
 
               </div>
             </div>
-          </div>
+          </div> -->
           <!--/column -->
         </div>
         <!--/.row -->
