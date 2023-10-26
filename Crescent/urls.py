@@ -276,7 +276,7 @@ urlpatterns = [
     path("Iot_delete", views_forFacilites_edit.Iot_delete),
     path("healthcare_delete", views_forFacilites_edit.helthcare_delete),
     path("support_and_development_delete", views_forFacilites_edit.Support_development_delete),
-    path("support_service_delete", views_forFacilites_edit.Center_of_excellance_delete),
+    path("center_of_excelence_delete", views_forFacilites_edit.Center_of_excellance_delete),
 
     #-----------------------------------facielty frontend-------------------------------------------------------------------------
     path("Iot", views_for_facilites.Iot),
@@ -301,7 +301,10 @@ urlpatterns = [
     path("Latest_events",views_for_newsandevents.Latest_events),
     path("New_events", views_for_newsandevents.New_events),
     path("past_events", views_for_newsandevents.past_events),
-    path("about", views.about_us)
+    path("about", views.about_us),
+    
+    #------------------------------------------->Home Screen Banner<--------------------------------------------------------------
+    path("home_screen_banner_save", views.home_screen_banner_save),
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

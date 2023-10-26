@@ -175,6 +175,19 @@
                         </div>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#team" aria-expanded="false"
+                            aria-controls="teams">
+                            <iconify-icon class="ti-notepad" width="20" height="20"></iconify-icon>
+                            <span class="menu-title ml-4 pt-1"> Teams</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="team">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href=" /Teams_page_edit ">Edit Page</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#facility" aria-expanded="false"
                             aria-controls="facility">
                             <iconify-icon class="ti-package" width="20" height="20"></iconify-icon>
@@ -195,19 +208,20 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#newsandevents" aria-expanded="false" aria-controls="newsandevents">
-                          <iconify-icon class="ti-world" width="20" height="20"></iconify-icon>
-                          <span class="menu-title  ml-4 pt-1">News And Events</span>
-                          <i class="menu-arrow"></i>
+                        <a class="nav-link" data-toggle="collapse" href="#newsandevents" aria-expanded="false"
+                            aria-controls="newsandevents">
+                            <iconify-icon class="ti-world" width="20" height="20"></iconify-icon>
+                            <span class="menu-title  ml-4 pt-1">News And Events</span>
+                            <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse " id="newsandevents">
-                          <ul class="nav flex-column sub-menu flex-wrap  " style="display: block; z-index: 09999999;">
-                            <li class="nav-item"><a class="nav-link" href="/latest_news_edit">Latest News</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/new_events_edit">New Events</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/past_events_edit">Past events</a></li>
-                          </ul>
+                            <ul class="nav flex-column sub-menu flex-wrap  " style="display: block; z-index: 09999999;">
+                                <li class="nav-item"><a class="nav-link" href="/latest_news_edit">Latest News</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/new_events_edit">New Events</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/past_events_edit">Past events</a></li>
+                            </ul>
                         </div>
-                      </li>
+                    </li>
                     <!-- <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
                 <iconify-icon icon="arcticons:netbenefits" width="20" height="20"></iconify-icon>
@@ -327,23 +341,23 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Content</label>
-                                            <input type="text" class="form-control" required autocomplete="off" placeholder="content" id="content"
-                                                name="program">
+                                            <input type="text" class="form-control" required autocomplete="off"
+                                                placeholder="content" id="content" name="program">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Key Points 1</label>
-                                            <input type="text" required autocomplete="off" class="form-control" placeholder="Key Points 1" id="Key_Points_1"
-                                                name="program">
+                                            <input type="text" required autocomplete="off" class="form-control"
+                                                placeholder="Key Points 1" id="Key_Points_1" name="program">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Key Points 2</label>
-                                            <input type="text" required autocomplete="off" class="form-control" placeholder="Key Points 2" id="Key_Points_2"
-                                                name="program">
+                                            <input type="text" required autocomplete="off" class="form-control"
+                                                placeholder="Key Points 2" id="Key_Points_2" name="program">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Key Points 3</label>
-                                            <input type="text" required autocomplete="off" class="form-control" placeholder="Key Points 3" id="Key_Points_3"
-                                                name="program">
+                                            <input type="text" required autocomplete="off" class="form-control"
+                                                placeholder="Key Points 3" id="Key_Points_3" name="program">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Top-Image</label>
@@ -360,22 +374,31 @@
                             </div>
                         </div>
                         <section class="overflow-hidden text-gray-700 ">
-                            <div class="flex flex-wrap gap-4" style="display: flex;justify-content: center;align-items: center;align-content: center;flex-direction: row;">
+                            <div class="flex flex-wrap gap-4"
+                                style="display: flex;justify-content: center;align-items: center;align-content: center;flex-direction: row;">
                                 {% for j in Iot_form_db %}
-                                    <div class="flex flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-900 dark:text-gray-100" style="    width: 250px;">
-                                        <img src="{{ j.image_iot.url }}" alt="" class="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square">
-                                        <div class="space-y-4 text-center divide-y divide-gray-700">
-                                            <div class="my-2 space-y-1">
-                                                <h2 class="text-xl font-semibold sm:text-2xl">{{ j.title_iot }}</h2>
-                                                <!-- <h2 class="text-xl font-semibold sm:text-2xl">{{ j.contant_iot }}</h2> -->
-                                                <p class="px-5 text-xs sm:text-base dark:text-gray-400">{{ j.uplode_date }}</p>
-                                            </div>
-                                            <div style="    display: flex; flex-direction: row; flex-wrap: wrap; align-content: center; justify-content: space-between; width: 100%; align-items: center;">
-                                              <button onclick="del('Iot_delete','{{ j.id }}')" style="display: flex; flex-wrap: nowrap; flex-direction: row; align-content: center; justify-content: center; align-items: center;"><iconify-icon icon="ic:baseline-delete-forever" style="color: red;" width="20" height="20"></iconify-icon>
-                                              <h6>Delete</h6></button>
-                                            </div>
+                                <div class="flex flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-900 dark:text-gray-100"
+                                    style="    width: 250px;">
+                                    <img src="{{ j.image_iot.url }}" alt=""
+                                        class="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square">
+                                    <div class="space-y-4 text-center divide-y divide-gray-700">
+                                        <div class="my-2 space-y-1">
+                                            <h2 class="text-xl font-semibold sm:text-2xl">{{ j.title_iot }}</h2>
+                                            <!-- <h2 class="text-xl font-semibold sm:text-2xl">{{ j.contant_iot }}</h2> -->
+                                            <p class="px-5 text-xs sm:text-base dark:text-gray-400">{{ j.uplode_date }}
+                                            </p>
+                                        </div>
+                                        <div
+                                            style="    display: flex; flex-direction: row; flex-wrap: wrap; align-content: center; justify-content: space-between; width: 100%; align-items: center;">
+                                            <button onclick="del('Iot_delete','{{ j.id }}')"
+                                                style="display: flex; flex-wrap: nowrap; flex-direction: row; align-content: center; justify-content: center; align-items: center;"><iconify-icon
+                                                    icon="ic:baseline-delete-forever" style="color: red;" width="20"
+                                                    height="20"></iconify-icon>
+                                                <h6>Delete</h6>
+                                            </button>
                                         </div>
                                     </div>
+                                </div>
                                 {% endfor %}
                             </div>
                         </section>

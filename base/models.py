@@ -687,4 +687,8 @@ class Past_Events_db(models.Model):
     description = models.CharField(max_length=500)
     uplode_date = models.DateField(default=timezone.now)
 
+class Home_Screen_banner(models.Model):
+    id = models.IntegerField(primary_key=True)
+    image_banner = models.ImageField(upload_to='Home_Screen_banner/')
+    uplode_date = models.DateField(default=timezone.now)
 

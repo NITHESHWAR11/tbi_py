@@ -9,7 +9,7 @@ from .models import ( Gallery,Team,logo,Carrer,blog,Testimonials,Events,HowWeWor
                     CategoryforQualification,International_Partners,Sisfs,WhoAreWe,Contact_SECTION,HOME_TESTIMONIAL,EventsForm,Facilities_developed,About_SISFS,
                     CategoryforExperience,EDI_InnovationVoucher,EDI_WeAimAtSection,EDI_Eligibility_Section,BundledServices,Start_UpTNimg1,Start_UpTNimg2,
                     CategoryforBlogs,StateGovtFundEligibilitySection,MentorConnectDB,MentorClinicDB, angelInvestorDB, new_venturesDB,TOPSECTION,WhatWeDo,
-                    CategoryforStartups,OurProcess,SpendingSection,JoinOurCommunity,HomePdfLink,Ourstartup_images,mentor_lists,team_lists, Home_Scrolling_text )
+                    CategoryforStartups,OurProcess,SpendingSection,JoinOurCommunity,HomePdfLink,Ourstartup_images,mentor_lists,team_lists, Home_Scrolling_text, Home_Screen_banner )
 
 # Custom Tools Functions
 from .Tools import get_images,get_team,reguler_datas,get_blog,get_startup,get_DemoDayPic,freguler_datas
@@ -634,10 +634,11 @@ def home(request):
         Uploadimage = UploadImage.objects.all()[::-1]
         link = HomePdfLink.objects.all()[::-1]
         scrolling_text = Home_Scrolling_text.objects.last()
-        
         Internationalpartners = International_Partners.objects.all()[::-1]
-        return render(request,"index.html",reguler_datas({"scrolling_text":scrolling_text,'link':link,'whoweare':whoweare,'ht':home_TESTIMONIAL,'cs':contact_Section,'investors':investors,'ip':Internationalpartners,'govt':govt,'Uploadimage':Uploadimage}))
-    except:
+        home_screen_banner = Home_Screen_banner.objects.last()
+        return render(request,"index.html",reguler_datas({"home_screen_banner": home_screen_banner,"scrolling_text":scrolling_text,'link':link,'whoweare':whoweare,'ht':home_TESTIMONIAL,'cs':contact_Section,'investors':investors,'ip':Internationalpartners,'govt':govt,'Uploadimage':Uploadimage}))
+    except Exception as e:
+        print("error: ", e)
         print("maybe database are empty")
     return render(request,"pages/home_edit.html",reguler_datas())
 
@@ -1645,3 +1646,15 @@ def delete_CategoryforStartups(request):
 def about_us(request):
     contact_Section =  Contact_SECTION.objects.all()[::-1]
     return render(request,"about.html",reguler_datas({'cs':contact_Section}))
+
+
+def home_screen_banner_save(request):
+    try:
+        images =  request.FILES['#home_screen_banner']
+        print(images)
+        batabase_save = Home_Screen_banner(image_banner=images)
+        batabase_save.save()
+        return render(request, "pages/home_edit.html", reguler_datas())
+    except Exception as e:
+        print(e)
+        return render(request, "pages/home_edit.html", reguler_datas())

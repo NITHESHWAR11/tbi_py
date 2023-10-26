@@ -175,6 +175,19 @@
                         </div>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#team" aria-expanded="false"
+                            aria-controls="teams">
+                            <iconify-icon class="ti-notepad"  width="20" height="20"></iconify-icon>
+                            <span class="menu-title ml-4 pt-1"> Teams</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="team">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href=" /Teams_page_edit ">Edit Page</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#facility" aria-expanded="false"
                             aria-controls="facility">
                             <iconify-icon class="ti-package" width="20" height="20"></iconify-icon>
@@ -352,7 +365,7 @@
                                                 name="image_file">
                                         </div>
                                         <button id="btn"
-                                            onclick="img_upload('support_service_edit_save','#fileInput-single_image',['#title','#content', '#Key_Points_1', '#Key_Points_2', '#Key_Points_3'])"
+                                            onclick="img_upload('center_of_eormate_save','#fileInput-single_image',['#title','#content', '#Key_Points_1', '#Key_Points_2', '#Key_Points_3'])"
                                             class="btn btn-primary mr-2">Submit</button>
                                         <button class="btn btn-light">Cancel</button>
                                     </form>
@@ -376,7 +389,7 @@
                                         </div>
                                         <div
                                             style="    display: flex; flex-direction: row; flex-wrap: wrap; align-content: center; justify-content: space-between; width: 100%; align-items: center;">
-                                            <button onclick="del('support_service_delete','{{ j.id }}')"
+                                            <button onclick="del('center_of_excelence_delete','{{ j.id }}')"
                                                 style="display: flex; flex-wrap: nowrap; flex-direction: row; align-content: center; justify-content: center; align-items: center;"><iconify-icon
                                                     icon="ic:baseline-delete-forever" style="color: red;" width="20"
                                                     height="20"></iconify-icon>

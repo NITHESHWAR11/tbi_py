@@ -127,7 +127,7 @@ def center_of_excellance_edit_save(request):
 
 def Center_of_excellance_delete(request):
     bl_id = request.POST.get("id")
-    logo = Support_servise.objects.get(id=bl_id)
+    logo = Center_of_excellance.objects.get(id=bl_id)
     logo.delete()
     return render(request, "pages/Support_service_edit.html", reguler_datas())
 

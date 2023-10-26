@@ -306,33 +306,29 @@
       </nav>
     </header>
     <section class="wrapper bg-light">
-      <div class="container py-14 py-md-16 text-center">
-        <div class="row">
-          <div class="col-lg-10 col-xl-8 col-xxl-7 mx-auto mb-8">
-            <h1 class="display-5 mb-3">Support and Service Gallery</h1>
-          </div>
-        </div>
-          {% for i in support_development_db %}
-          <article class="postcard light blue">
-            <a class="postcard__img_link" href="#">
-              <img class="postcard__img" src="{{ i.image_iot.url }}" alt="Image Title" />
-            </a>
-            <div class="postcard__text t-dark">
-              <h1 class="postcard__title blue"><a href="#">{{ i.title_iot }}</a></h1>
-              <div class="postcard__subtitle small">
-                <time datetime="2020-05-25 12:00:00">
-                  <i class="fas fa-calendar-alt mr-2"></i>{{ i.uplode_date }}
-                </time>
+          {% for i in Support_servise_formdata_db %}
+          <div class="w-80 bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg shadow-lg p-4 m-4">
+            <article class="postcard light blue">
+              <a class="postcard__img_link" href="#">
+                <img class="postcard__img w-20 h-20" src="{{ i.image_iot.url }}" alt="Image Title" />
+              </a>
+              <div class="postcard__text t-dark">
+                <h1 class="postcard__title blue"><a href="#">{{ i.title_iot }}</a></h1>
+                <div class="postcard__subtitle small">
+                  <time datetime="2020-05-25 12:00:00">
+                    <i class="fas fa-calendar-alt mr-2"></i>{{ i.uplode_date }}
+                  </time>
+                </div>
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">{{ i.contant_iot }}</div>
+                <ul class="postcard__tagbox">
+                  <li class="tag__item"><i class="fas fa-tag mr-2"></i>{{ i.key_point1 }}</li>
+                  <li class="tag__item"><i class="fas fa-clock mr-2"></i>{{ i.key_point2 }}</li>
+                  <li class="tag__item"><i class="fas fa-play mr-2">{{ i.key_point3 }}</i></li>
+                </ul>
               </div>
-              <div class="postcard__bar"></div>
-              <div class="postcard__preview-txt">{{ i.contant_iot }}</div>
-              <ul class="postcard__tagbox">
-                <li class="tag__item"><i class="fas fa-tag mr-2"></i>{{ i.key_point1 }}</li>
-                <li class="tag__item"><i class="fas fa-clock mr-2"></i>{{ i.key_point2 }}</li>
-                <li class="tag__item"><i class="fas fa-play mr-2">{{ i.key_point3 }}</i></li>
-              </ul>
-            </div>
-          </article>
+            </article>
+          </div>
           {% endfor %}
       </div>
     </section>
